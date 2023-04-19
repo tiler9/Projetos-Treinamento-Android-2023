@@ -7,7 +7,7 @@ public class Pessoa {
     private String nomeDoCurso;
     private String telefoneContato;
 
-    public Pessoa(){
+    public Pessoa() {
 
     }
 
