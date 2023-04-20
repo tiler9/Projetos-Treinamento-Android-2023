@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     PessoaController controller;
 
     SharedPreferences preferences;
+
+    SharedPreferences.Editor listaVip;
+
     public static final String NOME_PREFERENCIAS = "prefListaVip";
 
     EditText editTextTelefone;
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         controller = new PessoaController();
 
         preferences = getSharedPreferences(NOME_PREFERENCIAS, 0);
-        SharedPreferences.Editor listaVip = preferences.edit();
+        listaVip = preferences.edit();
 
         pessoa.setPrimeiroNome(preferences.getString("primeiroNome", "Nada escrito"));
         pessoa.setSobrenome(preferences.getString("sobreNome", "Nada escrito"));
@@ -74,7 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 editTextSobrenome.setText("");
                 editTextTelefone.setText("");
                 editTextNomeCurso.setText("");
+
+                listaVip.clear();
+                listaVip.apply();
             }
+
         });
 
         buttonFinalizar.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
                 listaVip.apply(); //salvando arquivo
                 controller.salvar(pessoa);
-
+                Log.d("MainActivity", "click botão salvr");
             }
         });
     }
