@@ -20,12 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     PessoaController controller;
 
-    SharedPreferences preferences;
-
-    SharedPreferences.Editor listaVip;
-
-    public static final String NOME_PREFERENCIAS = "prefListaVip";
-
     EditText editTextTelefone;
     EditText editTextNomeCurso;
     EditText editTextSobrenome;
@@ -42,15 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
 
-        controller = new PessoaController();
-
-        preferences = getSharedPreferences(NOME_PREFERENCIAS, 0);
-        listaVip = preferences.edit();
-
-        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", "Nada escrito"));
-        pessoa.setSobrenome(preferences.getString("sobreNome", "Nada escrito"));
-        pessoa.setNomeDoCurso(preferences.getString("nomeCurso", "Nada escrito"));
-        pessoa.setTelefoneContato(preferences.getString("telefoneContato", "Nada escrito"));
+        controller = new PessoaController(MainActivity.this);
+        controller.buscar(pessoa);
 
         editTextTelefone = findViewById(R.id.editTextTelefone);
         editTextNomeCurso = findViewById(R.id.editTextNomeCurso);
@@ -79,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 editTextTelefone.setText("");
                 editTextNomeCurso.setText("");
 
-                listaVip.clear();
-                listaVip.apply();
+                controller.limpar();
             }
 
         });
@@ -103,12 +89,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Salvo" + pessoa.toString(), Toast.LENGTH_SHORT).show();
 
-                listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
-                listaVip.putString("sobreNome", pessoa.getSobrenome());
-                listaVip.putString("nomeCurso", pessoa.getNomeDoCurso());
-                listaVip.putString("telefoneContato", pessoa.getTelefoneContato());
-
-                listaVip.apply(); //salvando arquivo
                 controller.salvar(pessoa);
                 Log.d("MainActivity", "click botão salvr");
             }
