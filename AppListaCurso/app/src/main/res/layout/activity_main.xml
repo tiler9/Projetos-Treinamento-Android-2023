@@ -96,10 +96,10 @@
         android:text="@string/txt_button_salvar"
         app:layout_constraintBottom_toTopOf="@+id/buttonFinalizar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toEndOf="@+id/buttonLimpar"
         app:layout_constraintTop_toBottomOf="@+id/editTextTelefone"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/buttonLimpar"
@@ -111,6 +111,35 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonFinalizar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTelefone"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.7" />
+
+    <Spinner
+        android:id="@+id/txtListaSpinner"
+        android:layout_width="409dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="337dp"
+        android:layout_marginBottom="16dp"
+        android:text="Selecione um curso..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtListaSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTelefone"
+        app:layout_constraintVertical_bias="0.444" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
