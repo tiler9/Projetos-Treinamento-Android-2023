@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gaseta"
+    tools:context=".view.GasEtaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:width="380dp"
+                android:text="@string/txt_text_titulo"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="24dp"
+                android:src="@mipmap/ic_launcher_round"></ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/editTextGasolina"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="10dp"
+                    android:height="48dp"
+                    android:ems="10"
+                    android:hint="@string/txt_editText_hint_Gasolina"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textColorHighlight="@color/white"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/editTextEtanol"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="10dp"
+                    android:height="48dp"
+                    android:ems="10"
+                    android:hint="@string/txt_editText_hint_Etanol"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/white"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonCalcular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="@string/txt_button_calcular" />
+
+
+            <TextView
+                android:id="@+id/txtRsultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:width="380dp"
+                android:text="@string/txt_text_resultado"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/buttonSalvar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:enabled="false"
+                android:text="@string/txt_button_salvar"
+                android:textColor="@color/white"
+                android:shadowColor="@color/white"
+                />
+
+            <Button
+                android:id="@+id/buttonLimpar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/txt_button_limpar" />
+
+
+            <Button
+                android:id="@+id/buttonFinalizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/txt_button_finalizar" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
